@@ -8,3 +8,4 @@ const result_div = document.querySelector('.result');
 const rock_div = document.getElementById('r');
 const papper_div = document.getElementById('p');
 const scissors_div = document.getElementById('s');
+
