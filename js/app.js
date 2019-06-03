@@ -27,7 +27,10 @@ function win(userChoice, compChoice) {
     compScore_span.innerHTML = compScore;
     const smallUserWord = 'User'.fontsize(3).sub();
     const smallCompWord = 'comp'.fontsize(3).sub();
+    const userChoice_div = document.getElementById(userChoice);
     result_p.innerHTML = `${convertToWord(userChoice)}${smallUserWord} beats ${convertToWord(compChoice)}${smallCompWord}. You win!`;
+    userChoice_div.classList.add('green-glow');
+    setTimeout(() => userChoice_div.classList.remove('green-glow'), 300);
 }
 
 function lose(userChoice, compChoice) {
@@ -36,13 +39,19 @@ function lose(userChoice, compChoice) {
     compScore_span.innerHTML = compScore;
     const smallUserWord = 'User'.fontsize(3).sub();
     const smallCompWord = 'comp'.fontsize(3).sub();
+    const userChoice_div = document.getElementById(userChoice);
     result_p.innerHTML = `${convertToWord(compChoice)}${smallCompWord} beats ${convertToWord(userChoice)}${smallUserWord}. You lose..`;
+    userChoice_div.classList.add('red-glow');
+    setTimeout(() => userChoice_div.classList.remove('red-glow'), 300);
 }
 
 function draw(userChoice, compChoice) {
     const smallUserWord = 'User'.fontsize(3).sub();
     const smallCompWord = 'comp'.fontsize(3).sub();
+    const userChoice_div = document.getElementById(userChoice);
     result_p.innerHTML = `${convertToWord(userChoice)}${smallUserWord} equals ${convertToWord(compChoice)}${smallCompWord}. Its a draw`;
+    userChoice_div.classList.add('grey-glow');
+    setTimeout(() => userChoice_div.classList.remove('grey-glow'), 300);
 }
 
 function game (userChoice) {
@@ -67,19 +76,11 @@ function game (userChoice) {
 }
 
 function main () {
-    rock_div.addEventListener('click', function() {
-        game('r');
-    })
+    rock_div.addEventListener('click', () => game('r'));
 
-    paper_div.addEventListener('click', function() {
-        game('r');
-        
-    })
+    paper_div.addEventListener('click', () => game('p'));
 
-    scissors_div.addEventListener('click', function() {
-        game('r');
-        
-    })
+    scissors_div.addEventListener('click', () => game('s'));
 }
 
 main();
