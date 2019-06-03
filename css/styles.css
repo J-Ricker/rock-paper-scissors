@@ -4,3 +4,51 @@
     box-sizing: border-box;
 }
 
+body {
+    background-color: #24272E;
+}
+
+header {
+    background: #fff;
+    padding: 20px;
+}
+
+header > h1 {
+    color: #24272E;
+    text-align: center;
+    font-family: 'Asap', sans-serif;
+}
+
+.score-board {
+    border: 3px solid #fff;
+    width: 200px;
+    margin: 20px auto;
+    color: #fff;
+    font-size: 46px;
+    border-radius: 4px;
+    text-align: center;
+    padding: 15px 20px;
+    font-family: 'Asap', sans-serif;
+    position: relative;
+}
+
+.badge {
+    background: #E2584D;
+    color: #fff;
+    font-size: 14px;
+    padding: 5px 10px;
+    font-family: 'Asap', sans-serif;
+}
+
+#user-label {
+    position: absolute;
+    top: 30px;
+    left: -30px;
+}
+
+#comp-label {
+    position: absolute;
+    top: 30px;
+    right: -30px;
+}
+
